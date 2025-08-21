@@ -1,0 +1,75 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "environment": {
+      "value": "dev"
+    },
+    "appName": {
+      "value": "htma"
+    },
+    "location": {
+      "value": "East US 2"
+    },
+    "postgresAdminLogin": {
+      "value": "htma_admin"
+    },
+    "postgresAdminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups/htma-dev-rg/providers/Microsoft.KeyVault/vaults/htma-dev-kv"
+        },
+        "secretName": "postgres-admin-password"
+      }
+    },
+    "mongoAdminUsername": {
+      "value": "htma_admin"
+    },
+    "mongoAdminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups/htma-dev-rg/providers/Microsoft.KeyVault/vaults/htma-dev-kv"
+        },
+        "secretName": "mongo-admin-password"
+      }
+    },
+    "openAiApiKey": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups/htma-dev-rg/providers/Microsoft.KeyVault/vaults/htma-dev-kv"
+        },
+        "secretName": "openai-api-key"
+      }
+    },
+    "googleClientId": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups/htma-dev-rg/providers/Microsoft.KeyVault/vaults/htma-dev-kv"
+        },
+        "secretName": "google-client-id"
+      }
+    },
+    "googleClientSecret": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups/htma-dev-rg/providers/Microsoft.KeyVault/vaults/htma-dev-kv"
+        },
+        "secretName": "google-client-secret"
+      }
+    },
+    "googleRefreshToken": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups/htma-dev-rg/providers/Microsoft.KeyVault/vaults/htma-dev-kv"
+        },
+        "secretName": "google-refresh-token"
+      }
+    },
+    "notificationFromEmail": {
+      "value": "notifications@htma.dev"
+    },
+    "notificationFromName": {
+      "value": "HTMA Platform"
+    }
+  }
+}

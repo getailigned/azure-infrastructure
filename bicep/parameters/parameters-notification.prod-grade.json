@@ -1,0 +1,87 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "resourceNamePrefix": {
+      "value": "htma-dev"
+    },
+    "environment": {
+      "value": "dev"
+    },
+    "postgresAdminLogin": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/98f43dcc-3139-41bb-a50b-a2fb1b08ef62/resourceGroups/htma-dev-rg/providers/Microsoft.KeyVault/vaults/htma-dev-kv"
+        },
+        "secretName": "postgres-admin-login"
+      }
+    },
+    "postgresAdminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/98f43dcc-3139-41bb-a50b-a2fb1b08ef62/resourceGroups/htma-dev-rg/providers/Microsoft.KeyVault/vaults/htma-dev-kv"
+        },
+        "secretName": "postgres-admin-password"
+      }
+    },
+    "mongoAdminUsername": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/98f43dcc-3139-41bb-a50b-a2fb1b08ef62/resourceGroups/htma-dev-rg/providers/Microsoft.KeyVault/vaults/htma-dev-kv"
+        },
+        "secretName": "mongo-admin-username"
+      }
+    },
+    "mongoAdminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/98f43dcc-3139-41bb-a50b-a2fb1b08ef62/resourceGroups/htma-dev-rg/providers/Microsoft.KeyVault/vaults/htma-dev-kv"
+        },
+        "secretName": "mongo-admin-password"
+      }
+    },
+    "openAiApiKey": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/98f43dcc-3139-41bb-a50b-a2fb1b08ef62/resourceGroups/htma-dev-rg/providers/Microsoft.KeyVault/vaults/htma-dev-kv"
+        },
+        "secretName": "openai-api-key"
+      }
+    },
+    "googleClientId": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/98f43dcc-3139-41bb-a50b-a2fb1b08ef62/resourceGroups/htma-dev-rg/providers/Microsoft.KeyVault/vaults/htma-dev-kv"
+        },
+        "secretName": "google-client-id"
+      }
+    },
+    "googleClientSecret": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/98f43dcc-3139-41bb-a50b-a2fb1b08ef62/resourceGroups/htma-dev-rg/providers/Microsoft.KeyVault/vaults/htma-dev-kv"
+        },
+        "secretName": "google-client-secret"
+      }
+    },
+    "googleRefreshToken": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/98f43dcc-3139-41bb-a50b-a2fb1b08ef62/resourceGroups/htma-dev-rg/providers/Microsoft.KeyVault/vaults/htma-dev-kv"
+        },
+        "secretName": "google-refresh-token"
+      }
+    },
+    "notificationFromEmail": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/98f43dcc-3139-41bb-a50b-a2fb1b08ef62/resourceGroups/htma-dev-rg/providers/Microsoft.KeyVault/vaults/htma-dev-kv"
+        },
+        "secretName": "notification-from-email"
+      }
+    },
+    "notificationFromName": {
+      "value": "HTMA Platform"
+    }
+  }
+}

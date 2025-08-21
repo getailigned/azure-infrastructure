@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "environment": {
+      "value": "dev"
+    },
+    "appName": {
+      "value": "htma"
+    },
+    "location": {
+      "value": "eastus2"
+    },
+    "postgresAdminLogin": {
+      "value": "htmaadmin"
+    },
+    "postgresAdminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/{subscription-id}/resourceGroups/htma-dev-rg/providers/Microsoft.KeyVault/vaults/htma-dev-kv"
+        },
+        "secretName": "postgres-admin-password"
+      }
+    },
+    "mongoAdminUsername": {
+      "value": "htmaadmin"
+    },
+    "mongoAdminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/{subscription-id}/resourceGroups/htma-dev-rg/providers/Microsoft.KeyVault/vaults/htma-dev-kv"
+        },
+        "secretName": "mongo-admin-password"
+      }
+    },
+    "openAiApiKey": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/{subscription-id}/resourceGroups/htma-dev-rg/providers/Microsoft.KeyVault/vaults/htma-dev-kv"
+        },
+        "secretName": "openai-api-key"
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "FUNCTIONS_EXTENSION_VERSION": "~4",
+    "WEBSITE_NODE_DEFAULT_VERSION": "~18",
+    "WEBSITE_RUN_FROM_PACKAGE": "1",
+    "CEDAR_POLICY_CACHE_TTL": "300",
+    "LOG_LEVEL": "debug",
+    "REDIS_URL": "redis://localhost:6379",
+    "NODE_ENV": "development"
+  },
+  "Host": {
+    "LocalHttpPort": 7071,
+    "CORS": "*",
+    "CORSCredentials": false
+  }
+}
